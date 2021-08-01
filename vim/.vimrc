@@ -1,8 +1,5 @@
+" PLUGINS
 call plug#begin(stdpath('data') . '/plugged')
-
-" Better syntax
-Plug 'sheerun/vim-polyglot'
-Plug 'uiiaoo/java-syntax.vim'
 
 " Colorscheme
 Plug 'morhetz/gruvbox'
@@ -19,10 +16,23 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
 " Custom
 Plug 'vim-airline/vim-airline'
 
 call plug#end()
+
+" Configure Treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
 
 colorscheme gruvbox
 
@@ -35,7 +45,6 @@ set shiftwidth=2
 
 let g:netrw_liststyle = 3 " Change directory view to tree
 
-" Macros
 let mapleader = ","
 
 noremap - ddp
@@ -63,3 +72,4 @@ nnoremap <leader>w :FZF -q <cword><cr>
 nnoremap <leader>d :GFiles<cr>
 
 nnoremap <leader>a :LspCodeAction<cr>
+
