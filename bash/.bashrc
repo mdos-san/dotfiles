@@ -136,7 +136,7 @@ alias vim="nvim"
 
 alias w="find ~/github/smartcity-cvfm -maxdepth 1 -type d | fzf | xargs -I{} tmux new-window -c {} -n {}"
 alias tmux="tmux -2"
-alias spring="mvn -q spring-boot:run -Dspring-boot.run.arguments=--spring.config.location=src/main/resources/"
+alias spring="mvn -q spring-boot:run -Dspring-boot.run.arguments='--spring.config.location=src/main/resources/ --spring.profiles.active=log_human,local,create_indexes'"
 alias build="mvn clean install -DskipTests"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
