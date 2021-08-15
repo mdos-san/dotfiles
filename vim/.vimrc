@@ -64,6 +64,12 @@ vnoremap <leader>` <esc>`<i`<esc>`>a`<esc>
 inoremap <leader>jk <esc>
 inoremap <esc> <nop>
 inoremap <C-u> <esc>vaw<S-u>ea
+inoremap [ []<left>
+inoremap ( ()<left>
+inoremap { {}<left>
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ` ``<left>
 
 nnoremap <leader>o 0y$:tabnew <c-r>"<cr>
 nnoremap <leader>p :%!prettier %<cr>
