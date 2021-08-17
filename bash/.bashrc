@@ -101,12 +101,12 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/alias.bash ]; then
+    . ~/alias.bash
 fi
 
-if [ -f ~/.bash_path ]; then
-    . ~/.bash_path
+if [ -f ~/path.bash]; then
+    . ~/path.bash
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -133,11 +133,8 @@ alias gc="git commit --allow-empty"
 alias grom="git rebase -i --autosquash origin/master"
 
 alias vim="nvim"
-
-alias w="find ~/github/smartcity-cvfm -maxdepth 1 -type d | fzf | xargs -I{} tmux new-window -c {} -n {}"
 alias tmux="tmux -2"
 alias spring="mvn -q spring-boot:run -Dspring-boot.run.arguments='--spring.config.location=src/main/resources/ --spring.profiles.active=log_human,local,create_indexes'"
-alias build="mvn clean install -DskipTests"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
