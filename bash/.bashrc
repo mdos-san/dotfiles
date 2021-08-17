@@ -105,7 +105,7 @@ if [ -f ~/alias.bash ]; then
     . ~/alias.bash
 fi
 
-if [ -f ~/path.bash]; then
+if [ -f ~/path.bash ]; then
     . ~/path.bash
 fi
 
