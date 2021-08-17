@@ -1,4 +1,4 @@
-" PLUGINS
+" Plugins
 call plug#begin(stdpath('data') . '/plugged')
 
 " Colorscheme
@@ -50,33 +50,36 @@ let mapleader = ","
 noremap - ddp
 noremap _ ddkP
 
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+" Edit vimrc
+nnoremap <leader>vrc :vsplit $MYVIMRC<cr>
 
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
-nnoremap <leader>` viw<esc>a`<esc>bi`<esc>lel
+" Reload vimrc
+nnoremap <leader>rl :source $MYVIMRC<cr>
 
-vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>
-vnoremap <leader>' <esc>`<i'<esc>`>a'<esc>
-vnoremap <leader>` <esc>`<i`<esc>`>a`<esc>
-
+" Escape
 inoremap <leader>jk <esc>
 inoremap <esc> <nop>
-inoremap <C-u> <esc>vaw<S-u>ea
-inoremap [ []<left>
-inoremap ( ()<left>
-inoremap { {}<left>
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ` ``<left>
 
-nnoremap <leader>o 0y$:tabnew <c-r>"<cr>
+" Quotes
+inoremap <leader>" ""<left>
+vnoremap <leader>" c"<C-R>""<ESC>
+inoremap <leader>' ''<left>
+vnoremap <leader>' c'<C-R>"'<ESC>
+inoremap <leader>` ``<left>
+vnoremap <leader>` c`<C-R>"`<ESC>
+
+" Uppercase
+inoremap <leader>u <ESC>viw<S-U>ea
+vnoremap <leader>u <S-U>
+
+" Prettier
 nnoremap <leader>p :%!prettier %<cr>
 
+" FZF
 nnoremap <leader>f :FZF<cr>
 nnoremap <leader>w :FZF -q <cword><cr>
 nnoremap <leader>d :GFiles<cr>
 
+" LSP
 nnoremap <leader>a :LspCodeAction<cr>
 
