@@ -9,12 +9,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " LSP
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-
-" Completion using LSP
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -80,24 +75,27 @@ vnoremap <leader>u <S-U>
 " Prettier
 nnoremap <leader>p :%!prettier %<cr>
 
-" Format with LSP
-nnoremap <leader><leader> :LspDocumentFormat<cr>
-
-" Goto error/warning with LSP
-nnoremap <leader>e :LspNextError<cr>
-nnoremap <leader>w :LspNextWarning<cr>
+" Goto next error/warning
+nmap <leader>e <Plug>(coc-diagnostic-next)
 
 " Jump to definition
-nnoremap <leader>d :LspDefinition<cr>
+nnoremap <silent> <leader>d <Plug>(coc-definition)
 
 " Jump to definition
 nnoremap <leader>r :LspRename<cr>
 
+" Action
+nnoremap <leader>a <Plug>(coc-codeaction)
+
+" COC
+nmap <silent> gd <Plug>(coc-definition)
+nmap <leader>ac  <Plug>(coc-codeaction)
+xmap <leader><leader>  <Plug>(coc-format-selected)
+nmap <leader><leader>  <Plug>(coc-format-selected)
+
 " FZF
 nnoremap <leader>f :FZF<cr>
 
-" LSP
-nnoremap <leader>a :LspCodeAction<cr>
 
 function TestFile()
   let currentFile = @%
@@ -106,6 +104,9 @@ function TestFile()
   if ext ==# "java"
     " Change main dir to 'test' and append 'Test' at end of filename
     let file = substitute(currentFile, '\(.*\)main\(.*\)\.java', '\1test\2Test.java', 'g')
+  elseif ext ==# "ts"
+    " Change src dir to 'test' and append 'Test' at end of filename
+    let file = substitute(currentFile, '\(.*\)src\(.*\)\.\(.*\)', '\1test\2.test.\3', 'g')
   elseif ext ==# "tsx"
     " Change src dir to 'test' and append 'Test' at end of filename
     let file = substitute(currentFile, '\(.*\)src\(.*\)\.\(.*\)', '\1test\2.test.\3', 'g')
