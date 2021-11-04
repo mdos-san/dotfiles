@@ -29,6 +29,9 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+Plug 'mattn/emmet-vim'
+
+" Theme
 colorscheme gruvbox
 
 set number
@@ -75,27 +78,17 @@ vnoremap <leader>u <S-U>
 " Prettier
 nnoremap <leader>p :%!prettier %<cr>
 
-" Goto next error/warning
-nmap <leader>e <Plug>(coc-diagnostic-next)
-
-" Jump to definition
-nnoremap <silent> <leader>d <Plug>(coc-definition)
-
-" Jump to definition
-nnoremap <leader>r :LspRename<cr>
-
-" Action
-nnoremap <leader>a <Plug>(coc-codeaction)
-
 " COC
-nmap <silent> gd <Plug>(coc-definition)
-nmap <leader>ac  <Plug>(coc-codeaction)
+nnoremap <leader>d <Plug>(coc-definition)
+nnoremap <leader>r <Plug>(coc-references)
+nnoremap <leader>e <Plug>(coc-diagnostic-next)
+nnoremap <leader>n <Plug>(coc-rename)
+nnoremap <leader>a  <Plug>(coc-codeaction)
 xmap <leader><leader>  <Plug>(coc-format-selected)
 nmap <leader><leader>  <Plug>(coc-format-selected)
 
 " FZF
 nnoremap <leader>f :FZF<cr>
-
 
 function TestFile()
   let currentFile = @%
