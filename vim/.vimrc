@@ -1,22 +1,13 @@
+let mapleader = ","
+
 " Plugins
 call plug#begin(stdpath('data') . '/plugged')
-
-" Colorscheme
-Plug 'morhetz/gruvbox'
-
-" FuzzyFinder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-" LSP
+Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Treesitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-
-" Custom
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'vim-airline/vim-airline'
-
 call plug#end()
 
 " Configure Treesitter
@@ -29,8 +20,6 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-Plug 'mattn/emmet-vim'
-
 " Theme
 colorscheme gruvbox
 
@@ -41,10 +30,10 @@ set matchtime=3
 set shiftround
 set shiftwidth=2
 set relativenumber
+set ignorecase
+set smartcase
 
 let g:netrw_liststyle = 3 " Change directory view to tree
-
-let mapleader = ","
 
 noremap - ddp
 noremap _ ddkP
@@ -79,11 +68,11 @@ vnoremap <leader>u <S-U>
 nnoremap <leader>p :%!prettier %<cr>
 
 " COC
-nnoremap <leader>d <Plug>(coc-definition)
-nnoremap <leader>r <Plug>(coc-references)
-nnoremap <leader>e <Plug>(coc-diagnostic-next)
-nnoremap <leader>n <Plug>(coc-rename)
-nnoremap <leader>a  <Plug>(coc-codeaction)
+nmap <leader>a <Plug>(coc-codeaction)
+nmap <leader>d <Plug>(coc-definition)
+nmap <leader>e <Plug>(coc-diagnostic-next)
+nmap <leader>n <Plug>(coc-rename)
+nmap <leader>r <Plug>(coc-references)
 xmap <leader><leader>  <Plug>(coc-format-selected)
 nmap <leader><leader>  <Plug>(coc-format-selected)
 
