@@ -23,15 +23,17 @@ EOF
 " Theme
 colorscheme gruvbox
 
+set expandtab
+set ignorecase
+set matchtime=3
+set nowrap
 set number
 set numberwidth=4
-set nowrap
-set matchtime=3
-set shiftround
-set shiftwidth=2
 set relativenumber
-set ignorecase
+set shiftround
+set shiftwidth=4
 set smartcase
+set tabstop=4
 
 let g:netrw_liststyle = 3 " Change directory view to tree
 
