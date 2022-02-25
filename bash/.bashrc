@@ -4,13 +4,8 @@
 [[ $- != *i* ]] && return
 
 # Load custom aliases if present
-if [ -f ~/alias.bash ]; then
-    . ~/alias.bash
-fi
-
-# Load custom path if present
-if [ -f ~/path.bash ]; then
-    . ~/path.bash
+if [ -f ~/custom.bash ]; then
+    . ~/custom.bash
 fi
 
 # Prompt
@@ -21,11 +16,17 @@ alias ls='ls --color=auto'
 alias rl="source ~/.bashrc"
 alias brc="vim ~/.bashrc"
 alias vrc="vim ~/.vimrc"
+alias vim="nvim"
+alias tmux="tmux -2"
+
+# Git
+alias gtodo="git commit --allow-empty"
 alias gl="git log --oneline --no-decorate"
 alias gc="git commit --allow-empty"
 alias grom="git rebase -i --autosquash origin/master"
-alias vim="nvim"
-alias tmux="tmux -2"
+
+
+# Java
 alias spring="mvn -q spring-boot:run -Dspring-boot.run.arguments='--spring.config.location=src/main/resources/ --spring.profiles.active=log_human,local,create_indexes'"
 
 
