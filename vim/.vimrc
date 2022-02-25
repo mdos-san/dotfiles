@@ -64,6 +64,7 @@ vnoremap <leader>( c(<C-R>")<ESC>
 
 " Uppercase
 inoremap <leader>u <ESC>viw<S-U>ea
+nnoremap <leader>u viw<S-U>e
 vnoremap <leader>u <S-U>
 
 " Prettier
@@ -75,8 +76,8 @@ nmap <leader>d <Plug>(coc-definition)
 nmap <leader>e <Plug>(coc-diagnostic-next)
 nmap <leader>n <Plug>(coc-rename)
 nmap <leader>r <Plug>(coc-references)
-xmap <leader><leader>  <Plug>(coc-format-selected)
-nmap <leader><leader>  <Plug>(coc-format-selected)
+nmap <leader><leader> :call CocAction('format')<cr>
+nmap <leader><space> <Cmd>CocCommand explorer<CR>
 
 " FZF
 nnoremap <leader>f :FZF<cr>
