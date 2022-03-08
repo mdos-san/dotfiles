@@ -42,6 +42,9 @@ function work {
   else
     tmux new-window -ad -n $WINDOW -t workspaces: -c $WINDOW
   fi
+
+  # Switch or Attach to the new window
+  tmux switch-client -t workspaces:$WINDOW || tmux at -t workspaces \; select-window -t $WINDOW
 }
 
 function process {
@@ -54,5 +57,8 @@ function process {
   else
     tmux new-window -ad -n $WINDOW -t processes: -c $WINDOW
   fi
+
+  # Switch or Attach to the new window
+  tmux switch-client -t processes:$WINDOW || tmux at -t processes \; select-window -t $WINDOW
 }
 
