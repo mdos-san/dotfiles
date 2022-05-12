@@ -23,6 +23,7 @@ EOF
 " Theme
 colorscheme gruvbox
 
+set autoread
 set expandtab
 set ignorecase
 set matchtime=3
@@ -78,6 +79,10 @@ nmap <leader>n <Plug>(coc-rename)
 nmap <leader>r <Plug>(coc-references)
 nmap <leader><leader> :call CocAction('format')<cr>
 nmap <leader><space> <Cmd>CocCommand explorer<CR>
+
+" Resize
+nmap <leader>+ <c-w>>
+nmap <leader>- <c-w><
 
 " FZF
 nnoremap <leader>f :FZF<cr>

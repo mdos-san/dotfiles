@@ -19,18 +19,26 @@ alias vrc="vim ~/.vimrc"
 alias vim="nvim"
 alias tmux="tmux -2"
 
-# Git
-alias gtodo="git commit --allow-empty"
-alias gl="git log --oneline --no-decorate"
-alias gc="git commit --allow-empty"
-alias grom="git rebase -i --autosquash origin/master"
-
-
-# Java
-alias spring="mvn -q spring-boot:run -Dspring-boot.run.arguments='--spring.config.location=src/main/resources/ --spring.profiles.active=log_human,local,create_indexes'"
-
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#######
+# Git #
+#######
+
+alias gl="git log --oneline --no-decorate"
+
+function git-origin {
+  git rebase -i --autosquash origin/master
+}
+
+function git-todo {
+  git commit --allow-empty
+}
+
+function git-save {
+  git add .
+  git commit --amend --no-edit
+}
 
 function work {
   WINDOW=$(find ~/github/ -mindepth 2 -maxdepth 2 | fzf)
@@ -60,5 +68,9 @@ function process {
 
   # Switch or Attach to the new window
   tmux switch-client -t processes:$WINDOW || tmux at -t processes \; select-window -t $WINDOW
+}
+
+function port-pid {
+    netstat -ltnp | grep -w ":$1"
 }
 
