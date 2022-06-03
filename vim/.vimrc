@@ -4,7 +4,7 @@ let mapleader = ","
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'vim-airline/vim-airline'
@@ -21,7 +21,8 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 " Theme
-colorscheme gruvbox
+let g:dracula_colorterm = 0
+colorscheme dracula
 
 set autoread
 set expandtab
