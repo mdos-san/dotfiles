@@ -8,6 +8,11 @@ if [ -f ~/custom.bash ]; then
     . ~/custom.bash
 fi
 
+# Load path file if present
+if [ -f ~/path.bash ]; then
+    . ~/path.bash
+fi
+
 # Prompt
 PS1='[\u@\h \W]\$ '
 
