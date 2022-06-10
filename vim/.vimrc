@@ -1,29 +1,13 @@
-let mapleader = ","
-
-" Plugins
-call plug#begin(stdpath('data') . '/plugged')
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'vim-airline/vim-airline'
-call plug#end()
-
-" Configure Treesitter
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-}
-EOF
+" Prevent duplication when vimrc file is resourced
+autocmd!
 
 " Theme
 let g:dracula_colorterm = 0
 colorscheme dracula
 
+let mapleader = " "
+
+" Options
 set autoread
 set expandtab
 set ignorecase
@@ -36,6 +20,7 @@ set shiftround
 set shiftwidth=4
 set smartcase
 set tabstop=4
+set termguicolors
 
 let g:netrw_liststyle = 3 " Change directory view to tree
 
@@ -79,7 +64,9 @@ nmap <leader>e <Plug>(coc-diagnostic-next)
 nmap <leader>n <Plug>(coc-rename)
 nmap <leader>r <Plug>(coc-references)
 nmap <leader><leader> :call CocAction('format')<cr>
-nmap <leader><space> <Cmd>CocCommand explorer<CR>
+
+" Toggle file explorer
+nmap <leader><space> :NvimTreeToggle<CR>
 
 " Resize
 nmap <leader>+ <c-w>>

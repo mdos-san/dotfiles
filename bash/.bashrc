@@ -21,6 +21,7 @@ alias ls='ls --color=auto'
 alias rl="source ~/.bashrc"
 alias brc="vim ~/.bashrc"
 alias vrc="vim ~/.vimrc"
+alias luarc="vim ~/.config/nvim/init.lua"
 alias vim="nvim"
 alias tmux="tmux -2"
 
