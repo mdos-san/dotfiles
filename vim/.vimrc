@@ -41,29 +41,29 @@ inoremap <esc> <nop>
 nnoremap ; :
 
 " Quotes
-inoremap <leader>" ""<left>
 vnoremap <leader>" c"<C-R>""<ESC>
-inoremap <leader>' ''<left>
 vnoremap <leader>' c'<C-R>"'<ESC>
-inoremap <leader>` ``<left>
 vnoremap <leader>` c`<C-R>"`<ESC>
 vnoremap <leader>( c(<C-R>")<ESC>
 
 " Uppercase
-inoremap <leader>u <ESC>viw<S-U>ea
 nnoremap <leader>u viw<S-U>e
 vnoremap <leader>u <S-U>
 
 " Prettier
 nnoremap <leader>p :%!prettier %<cr>
 
-" COC
-nmap <leader>a <Plug>(coc-codeaction)
-nmap <leader>d <Plug>(coc-definition)
-nmap <leader>e <Plug>(coc-diagnostic-next)
-nmap <leader>n <Plug>(coc-rename)
-nmap <leader>r <Plug>(coc-references)
-nmap <leader><leader> :call CocAction('format')<cr>
+" Diagnostic
+nmap <leader>e :lua vim.diagnostic.goto_next()<CR>
+nmap <leader>E :lua vim.diagnostic.goto_prev()<CR>
+
+" LSP
+nmap <leader>a :lua vim.lsp.buf.code_actions()<CR>
+nmap <leader>d :lua vim.lsp.buf.definition()<CR>
+nmap <leader>D :lua vim.lsp.buf.declaration()<CR>
+nmap <leader>n :lua vim.lsp.buf.rename()<CR>
+nmap <leader>r :lua vim.lsp.buf.references()<CR>
+nmap <leader><leader> :lua vim.lsp.buf.formatting()<cr>
 
 " Toggle file explorer
 nmap <leader><space> :NvimTreeToggle<CR>
