@@ -1,5 +1,1 @@
-require'lspconfig'.cssls.setup{}
-require'lspconfig'.dockerls.setup{}
-require'lspconfig'.html.setup{}
-require'lspconfig'.jsonls.setup{}
-require'lspconfig'.tsserver.setup{}
+-- LSP configuration is made in ./nvim-cmp to add capabilities
