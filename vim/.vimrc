@@ -21,6 +21,9 @@ set shiftwidth=4
 set smartcase
 set tabstop=4
 set termguicolors
+set foldmethod=indent
+set nofoldenable
+set cursorline
 
 let g:netrw_liststyle = 3 " Change directory view to tree
 
@@ -57,13 +60,22 @@ nnoremap <leader>p :%!prettier %<cr>
 nmap <leader>e :lua vim.diagnostic.goto_next()<CR>
 nmap <leader>E :lua vim.diagnostic.goto_prev()<CR>
 
+" Toggle current fold
+nnoremap <leader>z za
+
+" Toggle all fold
+nnoremap <leader>x :set foldenable!
+
 " LSP
-nmap <leader>a :lua vim.lsp.buf.code_actions()<CR>
+nmap <leader>a :lua vim.lsp.buf.code_action()<CR>
 nmap <leader>d :lua vim.lsp.buf.definition()<CR>
 nmap <leader>D :lua vim.lsp.buf.declaration()<CR>
 nmap <leader>n :lua vim.lsp.buf.rename()<CR>
 nmap <leader>r :lua vim.lsp.buf.references()<CR>
 nmap <leader><leader> :lua vim.lsp.buf.formatting()<cr>
+
+" Wrap word with ()
+nnoremap <leader>( viw"zdi()<esc>"zPl
 
 " Toggle file explorer
 nmap <leader><space> :NvimTreeToggle<CR>
