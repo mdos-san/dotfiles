@@ -24,6 +24,7 @@ alias vrc="vim ~/.vimrc"
 alias luarc="vim ~/.config/nvim/init.lua"
 alias vim="nvim"
 alias tmux="tmux -2"
+alias peek="peek -b ffmpeg"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -31,10 +32,18 @@ alias tmux="tmux -2"
 # Git #
 #######
 
-alias gl="git log --oneline --no-decorate"
+alias gl="git log --oneline --no-decorate origin/master.."
+alias gpf="git push --force origin"
+alias gro="git rebase origin/master -i --autosquash"
+alias grc="git rebase --continue"
+alias gfa="git fetch --all"
 
-function git-origin {
-  git rebase -i --autosquash origin/master
+function gcf {
+  git commit --fixup=$1
+}
+
+function git-changelog {
+  git log --pretty="- %s" origin/master..
 }
 
 function git-todo {
