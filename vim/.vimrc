@@ -87,6 +87,10 @@ nmap <leader>- <c-w><
 " FZF
 nnoremap <leader>f :FZF<cr>
 
+" Snippet
+imap <silent> <a-f> <cmd>lua require('luasnip').expand_or_jump()<Cr>
+imap <silent> <a-d> <cmd>lua require('luasnip').jump(-1)<Cr>
+
 function TestFile()
   let currentFile = @%
   let ext = substitute(currentFile, '\(.*\)\.\(.*\)', '\2', 'g')
