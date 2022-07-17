@@ -89,3 +89,4 @@ function port-pid {
     netstat -ltnp | grep -w ":$1"
 }
 
+export PATH=$PATH:~/nvim/bin
