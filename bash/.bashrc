@@ -50,6 +50,10 @@ function git-todo {
   git commit --allow-empty
 }
 
+function git-plan {
+  git commit --allow-empty
+}
+
 function git-save {
   git add .
   git commit --amend --no-edit
