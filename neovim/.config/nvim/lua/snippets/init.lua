@@ -13,7 +13,7 @@ ls.add_snippets("all", {
 interface {}Props {{
 }}
 
-const {} = ({{}}: {}Props) => {{
+const {} = ({{}}: {}Props): JSX.Element => {{
     return <{}>
     {}
     </{}>
@@ -25,12 +25,13 @@ export default {};
 
     s("ser", fmt(
 [[interface {}ServiceFactory {{
+    (): {}ServiceInterface;
 }}
 
 export interface {}ServiceInterface {{
 }}
 
-const {}: {}ServiceFactory = (): {}ServiceInterface  => {{
+const {}Service: {}ServiceFactory = (): {}ServiceInterface  => {{
 
     const init = () => {{
         {}
@@ -41,16 +42,17 @@ const {}: {}ServiceFactory = (): {}ServiceInterface  => {{
     }}
 }}
 
-export default {};
+export default {}Service;
 ]]
-    , { rep(1), rep(1), i(1, "ServiceName"), rep(1), rep(1), i(0), rep(1) })),
+    , { rep(1), rep(1), rep(1), i(1, "Name"), rep(1), rep(1), i(0), rep(1) })),
 
     s("afu", fmt(
 [[const {} = ({}): {} => {{
     {} 
 }}
 ]]
-    , {i(1), i(2), i(3), i(0)}))
+    , {i(1), i(2), i(3), i(0)})),
 
+    s("<<<", fmt([[<{} {}>{}</{}>]] , {i(1), i(2), i(0), rep(1)}))
 })
 
