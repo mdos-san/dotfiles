@@ -25,6 +25,9 @@ return require('packer').startup(function(use)
     -- TS
     use 'nvim-treesitter/nvim-treesitter'
 
+    -- Git
+    use 'airblade/vim-gitgutter'
+
     -- Theme
     use 'dracula/vim'
     use 'vim-airline/vim-airline'
