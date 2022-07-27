@@ -26,6 +26,8 @@ alias vim="nvim"
 alias tmux="tmux -2"
 alias peek="peek -b ffmpeg"
 
+alias k="kubectl"
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #######
