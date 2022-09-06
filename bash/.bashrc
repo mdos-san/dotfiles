@@ -25,6 +25,7 @@ alias luarc="vim ~/.config/nvim/init.lua"
 alias vim="nvim"
 alias tmux="tmux -2"
 alias peek="peek -b ffmpeg"
+alias unity="UnityHub --disable-gpu-sandbox"
 
 alias k="kubectl"
 
