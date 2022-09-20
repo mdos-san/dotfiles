@@ -40,10 +40,6 @@ nnoremap <leader>vrc :vsplit $MYVIMRC<cr>
 " Reload vimrc
 nnoremap <leader>rl :source $MYVIMRC<cr>
 
-" Escape
-inoremap <leader>jk <esc>
-inoremap <esc> <nop>
-
 " Better command mode
 nnoremap ; :
 
@@ -88,19 +84,21 @@ nmap <leader><space> :NvimTreeToggle<CR>
 nmap <leader>+ <c-w>>
 nmap <leader>- <c-w><
 
-" Snippet
-imap <silent> <a-f> <cmd>lua require('luasnip').expand_or_jump()<Cr>
-imap <silent> <a-d> <cmd>lua require('luasnip').jump(-1)<Cr>
-
 nnoremap <leader>f :lua require("mdossan").findFile()<cr>
 nnoremap <leader>t :lua require("mdossan").testCurrentFile()<CR>
+
+inoremap <esc> <nop>
+inoremap <a-a> <esc>
+inoremap <a-i> <esc>
+inoremap <a-u> <esc>u
+inoremap <a-s> <cmd>lua require('luasnip').expand_or_jump()<Cr>
+inoremap <a-backspace> <del>
 inoremap ' ''<left>
 inoremap " ""<left>
 inoremap ` ``<left>
 inoremap ( ()<left>
 inoremap { {}<left>
 inoremap [ []<left>
-inoremap <leader><backspace> <del>
 inoremap <c-h> <left>
 inoremap <c-j> <down>
 inoremap <c-k> <up>
