@@ -1,16 +1,8 @@
 #!/bin/bash
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-# Load custom aliases if present
+# Load custom config if present
 if [ -f ~/custom.bash ]; then
     . ~/custom.bash
-fi
-
-# Load path file if present
-if [ -f ~/path.bash ]; then
-    . ~/path.bash
 fi
 
 # Prompt
@@ -97,3 +89,4 @@ function port-pid {
 }
 
 export PATH=$PATH:~/nvim/bin
+

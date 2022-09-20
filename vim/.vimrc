@@ -5,6 +5,8 @@ autocmd!
 let g:dracula_colorterm = 0
 colorscheme dracula
 
+let $BASH_ENV = "~/.bashrc"
+
 let mapleader = " "
 
 " Options
@@ -85,12 +87,12 @@ nmap <leader><space> :NvimTreeToggle<CR>
 nmap <leader>+ <c-w>>
 nmap <leader>- <c-w><
 
-" FZF
-nnoremap <leader>f :FZF<cr>
-
 " Snippet
 imap <silent> <a-f> <cmd>lua require('luasnip').expand_or_jump()<Cr>
 imap <silent> <a-d> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+nnoremap <leader>f :lua require("mdossan").findFile()<cr>
+nnoremap <leader>t :lua require("mdossan").testCurrentFile()<CR>
 
 function TestFile()
   let currentFile = @%
@@ -116,5 +118,5 @@ function CreateFileDirectories()
   call mkdir(dirs, 'p')
 endfunction
 
-" Switch to test file
-nnoremap <leader>t :call TestFile()<cr>
+"Polyconseil
+autocmd FileType java lua vim.lsp.buf_attach_client(0, 1)

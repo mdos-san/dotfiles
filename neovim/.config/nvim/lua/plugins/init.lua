@@ -19,8 +19,7 @@ return require('packer').startup(function(use)
     use 'kyazdani42/nvim-tree.lua'
 
     -- Fuzzy finder
-    use 'junegunn/fzf'
-    use 'junegunn/fzf.vim'
+    use 'vijaymarupudi/nvim-fzf'
 
     -- TS
     use 'nvim-treesitter/nvim-treesitter'
