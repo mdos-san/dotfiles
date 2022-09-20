@@ -88,5 +88,12 @@ function port-pid {
     netstat -ltnp | grep -w ":$1"
 }
 
+function findSameBaseName {
+  basename $1 | \
+      cut -d '.' -f 1 | \
+      xargs -I{} -n 1 find . -name *{}* -not -path *node_modules* -not -path *target* -not -path *.git* | \
+      xargs realpath
+}
+
 export PATH=$PATH:~/nvim/bin
 

@@ -86,6 +86,7 @@ nmap <leader>- <c-w><
 
 nnoremap <leader>f :lua require("mdossan").findFile()<cr>
 nnoremap <leader>t :lua require("mdossan").testCurrentFile()<CR>
+nnoremap <leader><tab> :lua require("mdossan").findSameBaseName()<CR>
 
 inoremap <esc> <nop>
 inoremap <a-a> <esc>
