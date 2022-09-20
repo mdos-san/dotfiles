@@ -93,6 +93,17 @@ imap <silent> <a-d> <cmd>lua require('luasnip').jump(-1)<Cr>
 
 nnoremap <leader>f :lua require("mdossan").findFile()<cr>
 nnoremap <leader>t :lua require("mdossan").testCurrentFile()<CR>
+inoremap ' ''<left>
+inoremap " ""<left>
+inoremap ` ``<left>
+inoremap ( ()<left>
+inoremap { {}<left>
+inoremap [ []<left>
+inoremap <leader><backspace> <del>
+inoremap <c-h> <left>
+inoremap <c-j> <down>
+inoremap <c-k> <up>
+inoremap <c-l> <right>
 
 function TestFile()
   let currentFile = @%
