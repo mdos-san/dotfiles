@@ -27,7 +27,6 @@ set shiftwidth=4
 set smartcase
 set tabstop=4
 set termguicolors
-set timeoutlen=250
 
 let g:netrw_liststyle = 3 " Change directory view to tree
 
