@@ -30,6 +30,10 @@ set termguicolors
 
 let g:netrw_liststyle = 3 " Change directory view to tree
 
+"
+" NORMAL MODE MAPPING
+"
+
 noremap - ddp
 noremap _ ddkP
 
@@ -42,22 +46,8 @@ nnoremap <leader>rl :source ~/.vimrc<cr>
 " Better command mode
 nnoremap ; :
 
-" Quotes
-vnoremap <leader>" c"<C-R>""<ESC>
-vnoremap <leader>' c'<C-R>"'<ESC>
-vnoremap <leader>` c`<C-R>"`<ESC>
-vnoremap <leader>( c(<C-R>")<ESC>
-
-" Uppercase
-nnoremap <leader>u viw<S-U>e
-vnoremap <leader>u <S-U>
-
 " Prettier
 nnoremap <leader>p :%!prettier %<cr>
-
-" Diagnostic
-nmap <leader>e :lua vim.diagnostic.goto_next()<CR>
-nmap <leader>E :lua vim.diagnostic.goto_prev()<CR>
 
 " Toggle current fold
 nnoremap <leader>z za
@@ -66,26 +56,29 @@ nnoremap <leader>z za
 nnoremap <leader>x :set foldenable!
 
 " LSP
-nmap <leader>a :lua vim.lsp.buf.code_action()<CR>
-nmap <leader>d :lua vim.lsp.buf.definition()<CR>
-nmap <leader>D :lua vim.lsp.buf.declaration()<CR>
-nmap <leader>n :lua vim.lsp.buf.rename()<CR>
-nmap <leader>r :lua vim.lsp.buf.references()<CR>
-nmap <leader><leader> :lua vim.lsp.buf.formatting()<cr>
+nnoremap <leader><leader> :lua vim.lsp.buf.formatting()<cr>
+nnoremap <leader>D :lua vim.lsp.buf.declaration()<CR>
+nnoremap <leader>a :lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>d :lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>l :lua vim.lsp.buf_attach_client(0, 1)<CR>
+nnoremap <leader>n :lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>r :lua vim.lsp.buf.references()<CR>
 
-" Wrap word with ()
-nnoremap <leader>( viw"zdi()<esc>"zPl
+" Diagnostic
+nnoremap <leader>e :lua vim.diagnostic.goto_next()<CR>
+nnoremap <leader>E :lua vim.diagnostic.goto_prev()<CR>
 
 " Toggle file explorer
-nmap <leader><space> :NvimTreeToggle<CR>
+nnoremap <leader><space> :NvimTreeToggle<CR>
 
-" Resize
-nmap <leader>+ <c-w>>
-nmap <leader>- <c-w><
-
+" Custom
+nnoremap <leader><tab> :lua require("mdossan").findSameBaseName()<CR>
 nnoremap <leader>f :lua require("mdossan").findFile()<cr>
 nnoremap <leader>t :lua require("mdossan").testCurrentFile()<CR>
-nnoremap <leader><tab> :lua require("mdossan").findSameBaseName()<CR>
+
+"
+" INSERT MODE MAPPING
+"
 
 " Autopair
 inoremap " ""<left>
