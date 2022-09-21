@@ -27,6 +27,9 @@ alias k="kubectl"
 # Git #
 #######
 
+alias ga="git add ."
+alias gc="git commit"
+alias gs="git status"
 alias gfa="git fetch --all"
 alias gl="git log --oneline --no-decorate origin/master.."
 alias gp="git branch --show-current | xargs git push origin"
