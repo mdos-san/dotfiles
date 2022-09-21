@@ -35,10 +35,10 @@ noremap - ddp
 noremap _ ddkP
 
 " Edit vimrc
-nnoremap <leader>vrc :vsplit $MYVIMRC<cr>
+nnoremap <leader>vrc :vsplit ~/.vimrc<cr>
 
 " Reload vimrc
-nnoremap <leader>rl :source $MYVIMRC<cr>
+nnoremap <leader>rl :source ~/.vimrc<cr>
 
 " Better command mode
 nnoremap ; :
