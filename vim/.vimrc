@@ -88,22 +88,26 @@ nnoremap <leader>f :lua require("mdossan").findFile()<cr>
 nnoremap <leader>t :lua require("mdossan").testCurrentFile()<CR>
 nnoremap <leader><tab> :lua require("mdossan").findSameBaseName()<CR>
 
-inoremap <esc> <nop>
-inoremap <a-a> <esc>
-inoremap <a-i> <esc>
-inoremap <a-u> <esc>u
-inoremap <a-s> <cmd>lua require('luasnip').expand_or_jump()<Cr>
-inoremap <a-backspace> <del>
-inoremap ' ''<left>
+" Autopair
 inoremap " ""<left>
-inoremap ` ``<left>
+inoremap ' ''<left>
 inoremap ( ()<left>
-inoremap { {}<left>
 inoremap [ []<left>
+inoremap ` ``<left>
+inoremap { {}<left>
+
+" Alt
+inoremap <a-a> <esc>
+inoremap <a-backspace> <del>
+inoremap <a-i> <esc>
+inoremap <a-q> <esc>:wqa<cr>
+inoremap <a-s> <cmd>lua require('luasnip').expand_or_jump()<Cr>
+inoremap <a-u> <esc>u
 inoremap <c-h> <left>
 inoremap <c-j> <down>
 inoremap <c-k> <up>
 inoremap <c-l> <right>
+inoremap <esc> <nop>
 
 function TestFile()
   let currentFile = @%
