@@ -27,11 +27,12 @@ alias k="kubectl"
 # Git #
 #######
 
-alias gl="git log --oneline --no-decorate origin/master.."
-alias gpf="git push --force origin"
-alias gro="git rebase origin/master -i --autosquash"
-alias grc="git rebase --continue"
 alias gfa="git fetch --all"
+alias gl="git log --oneline --no-decorate origin/master.."
+alias gp="git branch --show-current | xargs git push origin"
+alias gpf="git branch --show-current | xargs git push --force origin"
+alias grc="git rebase --continue"
+alias gro="git rebase origin/master -i --autosquash"
 
 function gcf {
   git commit --fixup=$1
