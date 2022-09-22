@@ -69,7 +69,7 @@ nnoremap <leader>e :lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>E :lua vim.diagnostic.goto_prev()<CR>
 
 " Toggle file explorer
-nnoremap <leader><space> :NvimTreeToggle<CR>
+nnoremap <leader><space> :NvimTreeFindFileToggle<CR>
 
 " Custom
 nnoremap <leader><tab> :lua require("mdossan").findSameBaseName()<CR>
