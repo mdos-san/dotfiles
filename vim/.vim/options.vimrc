@@ -1,0 +1,19 @@
+set autoread
+set cursorline
+set expandtab
+set foldmethod=indent
+set ignorecase
+set matchtime=3
+set nofoldenable
+set nowrap
+set number
+set numberwidth=4
+set relativenumber
+set scrolloff=10
+set shiftround
+set shiftwidth=4
+set smartcase
+set tabstop=4
+set termguicolors
+colorscheme dracula
+
