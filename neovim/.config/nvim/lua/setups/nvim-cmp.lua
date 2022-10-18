@@ -69,3 +69,6 @@ require('lspconfig')['cssls'].setup {
 require('lspconfig')['html'].setup {
     capabilities = capabilities
 }
+require('lspconfig')['csharp_ls'].setup {
+    capabilities = capabilities
+}
