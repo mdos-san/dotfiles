@@ -67,3 +67,6 @@ inoremap <c-k> <up>
 inoremap <c-l> <right>
 inoremap <esc> <nop>
 
+" Expand snippet
+imap <silent><expr> <a-f> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '' 
+
