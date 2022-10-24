@@ -41,6 +41,6 @@
   },
   "JSX Tag": {
     "prefix": ["<<"],
-    "body": ["<${1:TagName}>", "  ${0:// Child}", "</${1:TagName}>"]
+    "body": ["<${1:div}>", "  ${0:{/* TODO */}}", "</${1:div}>"]
   }
 }
