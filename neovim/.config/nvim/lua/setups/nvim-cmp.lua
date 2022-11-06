@@ -65,7 +65,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['tsserver'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    init_options = {
+        preferences = {
+            disableSuggestions = true,
+        },
+    },
 }
 
 require('lspconfig')['cssls'].setup {
@@ -75,7 +80,6 @@ require('lspconfig')['cssls'].setup {
 require('lspconfig')['html'].setup {
     capabilities = capabilities
 }
-
-require('lspconfig')['csharp_ls'].setup {
+require('lspconfig')['omnisharp'].setup {
     capabilities = capabilities
 }
