@@ -28,10 +28,13 @@ alias k="kubectl"
 #######
 
 alias ga="git add ."
+alias gaca="git add . && git commit --amend"
 alias gc="git commit"
+alias gca="git commit --amend"
 alias gs="git status"
 alias gfa="git fetch --all"
 alias gl="git log --oneline --no-decorate origin/master.."
+alias gd="git diff origin/master.."
 alias gp="git branch --show-current | xargs git push origin"
 alias gpf="git branch --show-current | xargs git push --force origin"
 alias grc="git rebase --continue"
