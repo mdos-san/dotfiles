@@ -1,4 +1,5 @@
 set autoread
+set completeopt=menu,menuone,noselect
 set cursorline
 set expandtab
 set foldmethod=indent
