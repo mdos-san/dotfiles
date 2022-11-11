@@ -104,4 +104,5 @@ function findSameBaseName {
 
 export PATH=$PATH:~/nvim/bin
 
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
