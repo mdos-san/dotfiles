@@ -11,9 +11,6 @@ nnoremap <leader>rl :source ~/.vimrc<cr>
 " Better command mode
 nnoremap ; :
 
-" Prettier
-nnoremap <leader>p :%!prettier %<cr>
-
 " Toggle current fold
 nnoremap <leader>z za
 
@@ -21,16 +18,13 @@ nnoremap <leader>z za
 nnoremap <leader>x :set foldenable!
 
 " LSP
-nnoremap <leader>D :lua vim.lsp.buf.declaration()<CR>
-nnoremap <leader>a :lua vim.lsp.buf.code_action()<CR>
-nnoremap <leader>d :lua vim.lsp.buf.definition()<CR>
-nnoremap <leader>l :lua vim.lsp.buf_attach_client(0, 1)<CR>
-nnoremap <leader>n :lua vim.lsp.buf.rename()<CR>
-nnoremap <leader>r :lua vim.lsp.buf.references()<CR>
-
-" Diagnostic
-nnoremap <leader>e :lua vim.diagnostic.goto_next()<CR>
-nnoremap <leader>E :lua vim.diagnostic.goto_prev()<CR>
+nnoremap <leader>a <Plug>(coc-codeaction-cursor)
+nnoremap <leader>d <Plug>(coc-definition)
+nnoremap <leader>n <Plug>(coc-rename)
+nnoremap <leader>r <Plug>(coc-references)
+nnoremap <leader>e <Plug>(coc-diagnostic-next)
+nnoremap <leader>E <Plug>(coc-diagnostic-prev)
+nnoremap <leader>p <Plug>(coc-format-selected)
 
 " Toggle file explorer
 nnoremap <leader><leader> :NvimTreeFindFileToggle<CR>
