@@ -17,6 +17,10 @@ nnoremap n nzz
 " Toggle current fold
 nnoremap <leader>z za
 
+" Jump
+nnoremap <c-d> <c-d>zz
+nnoremap <c-u> <c-u>zz
+
 " Toggle all fold
 nnoremap <leader>x :set foldenable!
 
