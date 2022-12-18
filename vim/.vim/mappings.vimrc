@@ -12,6 +12,9 @@ nnoremap <leader>rl :source ~/.vimrc<cr>
 nnoremap ; :
 
 " Toggle current fold
+nnoremap n nzz
+
+" Toggle current fold
 nnoremap <leader>z za
 
 " Toggle all fold
