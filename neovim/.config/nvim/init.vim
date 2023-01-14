@@ -6,6 +6,8 @@ if has('nvim')
   lua require('plugins')
    
   " Setups
+  lua require('setups.lspconfig')
+  lua require('setups.rust-tools')
   lua require('setups.nvim-tree')
   lua require('setups.nvim-treesitter')
   lua require('snippets')

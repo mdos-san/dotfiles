@@ -13,10 +13,13 @@ return require('packer').startup(function(use)
     use 'vijaymarupudi/nvim-fzf'
 
     -- TS
-    use 'nvim-treesitter/nvim-treesitter'
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-    -- Coc
-    use {'neoclide/coc.nvim', branch = 'release'}
+    -- LSP
+    use 'neovim/nvim-lspconfig'
+
+    -- Rust
+    use 'simrat39/rust-tools.nvim'
 
     -- Theme
     use 'dracula/vim'

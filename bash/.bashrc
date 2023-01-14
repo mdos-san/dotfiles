@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# Load custom config if present
-if [ -f ~/custom.bash ]; then
-    . ~/custom.bash
-fi
+# Source
+[ -f ~/custom.bash ] && source ~/custom.bash
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # Prompt
 PS1='[\u@\h \W]\$ '
@@ -23,10 +22,7 @@ alias k="kubectl"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-#######
-# Git #
-#######
-
+# Git
 alias ga="git add ."
 alias gaca="git add . && git commit --amend"
 alias gc="git commit"
@@ -103,7 +99,4 @@ function findSameBaseName {
 }
 
 export PATH=$PATH:~/nvim/bin
-
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
-
-. "$HOME/.cargo/env"
+export PATH=$PATH:~/.local/bin
