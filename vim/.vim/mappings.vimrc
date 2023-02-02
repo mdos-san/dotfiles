@@ -27,11 +27,8 @@ nnoremap <leader>x :set foldenable!
 " Toggle file explorer
 nnoremap <leader><leader> :NvimTreeFindFileToggle<CR>
 
-" Find file with same basename: Hello.tsx - Hello.css
-nnoremap <leader><tab> :lua require("mdossan").findSameBaseName()<CR>
-
 " Find file in repo with FZF
-nnoremap <leader>f :lua require("mdossan").findFile()<cr>
+nnoremap <leader><tab> :lua require("mdossan").findFile()<cr>
 nnoremap <leader>t :lua require("mdossan").testCurrentFile()<CR>
 
 "
