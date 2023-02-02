@@ -28,6 +28,9 @@ return require('packer').startup(function(use)
     -- Rust
     use 'simrat39/rust-tools.nvim'
 
+    -- Java
+    use 'mfussenegger/nvim-jdtls'
+
     -- Theme
     use 'dracula/vim'
     use 'vim-airline/vim-airline'
