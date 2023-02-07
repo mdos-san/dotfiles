@@ -42,15 +42,7 @@ local config = {
   },
 }
 
--- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
--- require('jdtls').start_or_attach(config)
-require('lspconfig')['jdtls'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities
-}
+require('jdtls').start_or_attach(config)
 
