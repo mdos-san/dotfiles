@@ -28,8 +28,7 @@ nnoremap <leader>x :set foldenable!
 nnoremap <leader><leader> :NvimTreeFindFileToggle<CR>
 
 " Find file in repo with FZF
-nnoremap <leader><tab> :lua require("mdossan").findFile()<cr>
-nnoremap <leader>t :lua require("mdossan").testCurrentFile()<CR>
+nnoremap <leader><tab> :FZF<cr>
 
 "
 " INSERT MODE MAPPING
