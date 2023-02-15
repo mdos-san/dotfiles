@@ -30,6 +30,11 @@ nnoremap <leader><leader> :NvimTreeFindFileToggle<CR>
 " Find file in repo with FZF
 nnoremap <leader><tab> :FZF<cr>
 
+" Wrap word with ', ", `
+nnoremap <leader>' bi'<esc>ea'<esc>
+nnoremap <leader>" bi"<esc>ea"<esc>
+nnoremap <leader>` bi`<esc>ea`<esc>
+
 "
 " INSERT MODE MAPPING
 "
