@@ -57,36 +57,6 @@ function git-save {
   git commit --amend --no-edit
 }
 
-function work {
-  WINDOW=$(find ~/github/ -mindepth 2 -maxdepth 2 | fzf)
-  tmux has-session -t workspaces
-  HAS_SESSION=$?
-  if [ $HAS_SESSION -eq 1 ]
-  then
-    tmux new-session -Ad -s workspaces -n $WINDOW -c $WINDOW
-  else
-    tmux new-window -ad -n $WINDOW -t workspaces: -c $WINDOW
-  fi
-
-  # Switch or Attach to the new window
-  tmux switch-client -t workspaces:$WINDOW || tmux at -t workspaces \; select-window -t $WINDOW
-}
-
-function process {
-  WINDOW=$(find ~/github/ -mindepth 2 -maxdepth 2 | fzf)
-  tmux has-session -t processes
-  HAS_SESSION=$?
-  if [ $HAS_SESSION -eq 1 ]
-  then
-    tmux new-session -Ad -s processes -n $WINDOW -c $WINDOW
-  else
-    tmux new-window -ad -n $WINDOW -t processes: -c $WINDOW
-  fi
-
-  # Switch or Attach to the new window
-  tmux switch-client -t processes:$WINDOW || tmux at -t processes \; select-window -t $WINDOW
-}
-
 function port-pid {
     netstat -ltnp | grep -w ":$1"
 }
