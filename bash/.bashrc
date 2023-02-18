@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Source
-[ -f ~/custom.bash ] && source ~/custom.bash
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/custom.bash ] && source ~/custom.bash
 
 # Prompt
 PS1='[\u@\h \W]\$ '
@@ -19,8 +20,6 @@ alias peek="peek -b ffmpeg"
 alias unity="UnityHub --disable-gpu-sandbox"
 
 alias k="kubectl"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Git
 alias ga="git add ."
@@ -70,5 +69,3 @@ function findSameBaseName {
 
 export PATH=$PATH:~/nvim/bin
 export PATH=$PATH:~/.local/bin
-
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
