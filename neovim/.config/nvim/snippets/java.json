@@ -31,6 +31,14 @@
             "}"
         ]
     },
+    "Class": {
+        "prefix": ["class"],
+        "body": [
+            "public class ${1:ClassName} {",
+            "  ${0:// Code}",
+            "}"
+        ]
+    },
     "Api": {
         "prefix": ["api"],
         "body": [
