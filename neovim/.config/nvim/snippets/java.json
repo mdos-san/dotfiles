@@ -39,6 +39,14 @@
             "}"
         ]
     },
+    "Method": {
+        "prefix": ["fn"],
+        "body": [
+            "public ${1:void} ${2:methodName}(${3:/* Parameter */}) {",
+            "  ${0:// Code}",
+            "}"
+        ]
+    },
     "Api": {
         "prefix": ["api"],
         "body": [
