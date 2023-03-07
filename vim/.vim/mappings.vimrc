@@ -35,6 +35,9 @@ nnoremap <leader>' bi'<esc>ea'<esc>
 nnoremap <leader>" bi"<esc>ea"<esc>
 nnoremap <leader>` bi`<esc>ea`<esc>
 
+" Fast exit
+nnoremap <leader>q :wqa<cr>
+
 "
 " INSERT MODE MAPPING
 "
