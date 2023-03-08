@@ -74,5 +74,11 @@
         "  });",
         "});"
     ]
+  },
+  "React - useState": {
+    "prefix": ["sta"],
+    "body": [
+      "const [${1:value}, ${2:setValue}] = useState(${3:null});"
+    ]
   }
 }
