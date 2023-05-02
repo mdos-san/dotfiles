@@ -25,7 +25,8 @@ nnoremap <c-u> <c-u>zz
 nnoremap <leader>x :set foldenable!
 
 " Toggle file explorer
-nnoremap <leader><leader> :NvimTreeFindFileToggle<CR>
+let NERDTreeShowHidden=1
+nnoremap <leader><leader> :NERDTreeToggle<CR>
 
 " Find file in repo with FZF
 nnoremap <leader><tab> :FZF<cr>

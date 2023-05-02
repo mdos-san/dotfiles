@@ -6,15 +6,11 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
 
     -- File explorer
-    use 'kyazdani42/nvim-web-devicons'
-    use 'kyazdani42/nvim-tree.lua'
+    use 'preservim/nerdtree'
 
     -- Fuzzy finder
     use { 'junegunn/fzf', run = ":call fzf#install()" }
     use { 'junegunn/fzf.vim' }
-
-    -- TS
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     -- LSP
     use 'neovim/nvim-lspconfig'

@@ -8,7 +8,5 @@ if has('nvim')
   " Setups
   lua require('setups.nvim-cmp')
   lua require('setups.rust-tools')
-  lua require('setups.nvim-tree')
-  lua require('setups.nvim-treesitter')
   lua require('snippets')
 end
