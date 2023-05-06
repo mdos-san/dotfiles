@@ -1,0 +1,43 @@
+{
+  "Variable": {
+    "prefix": ["let"],
+    "body": ["let ${1: varName} = ${2:value};"]
+  },
+  "Constant": {
+    "prefix": ["con"],
+    "body": ["const ${1: varName} = ${2:value};"]
+  },
+  "If": {
+    "prefix": ["if"],
+    "body": [
+        "if ${1:0 < 1} {",
+        "  ${2:// TODO}",
+        "}"
+    ]
+  },
+  "While": {
+    "prefix": ["whi"],
+    "body": [
+        "while ${1:0 < 1} {",
+        "  ${2:// TODO}",
+        "}"
+    ]
+  },
+  "For": {
+    "prefix": ["for"],
+    "body": [
+        "for ${1:v} in ${2:0..42} {",
+        "  ${0:// TODO}",
+        "}"
+    ]
+  },
+  "Function": {
+    "prefix": ["fn"],
+    "body": [
+        "fn ${1:functionName}(${2:a, b}) {",
+        "  ${0:// TODO}",
+        "}"
+    ]
+  }
+ }
+}
