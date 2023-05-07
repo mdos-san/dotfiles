@@ -18,6 +18,7 @@ alias vim="nvim"
 alias tmux="tmux -2"
 alias peek="peek -b ffmpeg"
 alias unity="UnityHub --disable-gpu-sandbox"
+alias history_clean="history -c && history -w"
 
 alias k="kubectl"
 
