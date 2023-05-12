@@ -13,9 +13,9 @@ set numberwidth=4
 set relativenumber
 set scrolloff=10
 set shiftround
-set shiftwidth=4
+set shiftwidth=2
 set smartcase
-set tabstop=4
+set tabstop=2
 set termguicolors
 colorscheme dracula
 
