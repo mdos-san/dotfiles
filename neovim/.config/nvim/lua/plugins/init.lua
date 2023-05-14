@@ -31,4 +31,7 @@ return require('packer').startup(function(use)
     -- Theme
     use 'dracula/vim'
     use 'vim-airline/vim-airline'
+
+    -- Syntax
+    use 'uiiaoo/java-syntax.vim'
 end)
