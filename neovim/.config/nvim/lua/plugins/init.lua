@@ -34,4 +34,5 @@ return require('packer').startup(function(use)
 
     -- Syntax
     use 'uiiaoo/java-syntax.vim'
+    use 'peitalin/vim-jsx-typescript'
 end)
