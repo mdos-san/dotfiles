@@ -32,7 +32,12 @@ return require('packer').startup(function(use)
     use 'dracula/vim'
     use 'vim-airline/vim-airline'
 
-    -- Syntax
-    use 'uiiaoo/java-syntax.vim'
-    use 'peitalin/vim-jsx-typescript'
+    -- Treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
 end)
