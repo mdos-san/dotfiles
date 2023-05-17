@@ -6,7 +6,8 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
 
     -- File explorer
-    use 'preservim/nerdtree'
+    use 'kyazdani42/nvim-web-devicons'
+    use 'kyazdani42/nvim-tree.lua'
 
     -- Fuzzy finder
     use { 'junegunn/fzf', run = ":call fzf#install()" }
