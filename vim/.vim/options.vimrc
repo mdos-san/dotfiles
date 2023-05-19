@@ -1,14 +1,16 @@
+colorscheme dracula
 set autoread
 set completeopt=menu,menuone,noselect
+set colorcolumn=80
 set cursorline
 set expandtab
 set foldmethod=indent
 set ignorecase
 set matchtime=3
+set mouse=
 set nofoldenable
 set nowrap
 set number
-set mouse=
 set numberwidth=4
 set relativenumber
 set scrolloff=10
@@ -17,5 +19,3 @@ set shiftwidth=2
 set smartcase
 set tabstop=2
 set termguicolors
-colorscheme dracula
-
