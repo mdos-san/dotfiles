@@ -1,7 +1,8 @@
 colorscheme dracula
 set autoread
-set completeopt=menu,menuone,noselect
 set colorcolumn=80
+set completeopt=menu,menuone,noselect
+set cursorcolumn
 set cursorline
 set expandtab
 set foldmethod=indent
