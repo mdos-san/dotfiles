@@ -45,6 +45,12 @@ nnoremap <leader>q :wqa<cr>
 " INSERT MODE MAPPING
 "
 
+" Disable esc key
+inoremap <esc> <nop>
+
+" Exit insert mode
+inoremap <a-i> <esc>
+
 " Autopair
 inoremap " ""<left>
 inoremap ' ''<left>
@@ -59,15 +65,8 @@ inoremap <a-s> <left>
 inoremap <a-e> <up>
 inoremap <a-d> <down>
 
-" Alt key mapping in insert mode
-inoremap <a-i> <esc>
 inoremap <a-q> <esc>:wqa<cr>
-inoremap <a-u> <esc>u
-inoremap <c-h> <left>
-inoremap <c-j> <down>
-inoremap <c-k> <up>
-inoremap <c-l> <right>
-inoremap <esc> <nop>
+inoremap <a-u> <esc>gUawea
 
 " Expand snippet
 imap <silent><expr> <a-a> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : ''
