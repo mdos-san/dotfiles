@@ -98,13 +98,19 @@ local lsp_flags = {
 }
 
 -- No need to setup rust: Done automatically by rust-tools
-require('lspconfig')['tsserver'].setup{
+require('lspconfig')['tsserver'].setup {
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities
 }
 
-require('lspconfig')['csharp_ls'].setup{
+require('lspconfig')['csharp_ls'].setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities
+}
+
+require('lspconfig')['cssls'].setup {
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities
