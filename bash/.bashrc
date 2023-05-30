@@ -64,5 +64,3 @@ function findSameBaseName {
       xargs realpath
 }
 
-export PATH=$PATH:~/nvim/bin
-export PATH=$PATH:~/.local/bin
