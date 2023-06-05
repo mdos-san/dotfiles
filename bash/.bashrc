@@ -5,6 +5,8 @@
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/custom.bash ] && source ~/custom.bash
 
+export HISTCONTROL=ignorespace
+
 # Prompt
 PS1='[\u@\h \W]\$ '
 
@@ -82,4 +84,3 @@ function findSameBaseName {
       xargs -I{} -n 1 find . -name *{}* -not -path *node_modules* -not -path *target* -not -path *.git* | \
       xargs realpath
 }
-
