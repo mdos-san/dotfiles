@@ -30,8 +30,10 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-jdtls'
 
     -- Theme
-    use 'dracula/vim'
-    use 'vim-airline/vim-airline'
+    use { "catppuccin/nvim", as = "catppuccin" }
+
+    -- Status bar
+    use 'freddiehaddad/feline.nvim'
 
     -- Treesitter
     use {

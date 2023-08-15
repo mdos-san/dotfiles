@@ -16,6 +16,8 @@ alias history_clean="history -c && history -w"
 # Use color with ls
 alias ls='ls --color=auto'
 
+alias tmux="tmux -2"
+
 # Reload bash configuration
 alias rl="source ~/.bashrc"
 
@@ -30,9 +32,6 @@ alias nvimrc="vim ~/.config/nvim/init.lua"
 
 # Use nvim by default
 alias vim="nvim"
-
-# Start tmux with colors
-alias tmux="tmux -2"
 
 # Start peek in ffmpeg mode
 alias peek="peek -b ffmpeg"

@@ -1,4 +1,3 @@
-colorscheme dracula
 set autoread
 set colorcolumn=80
 set completeopt=menu,menuone,noselect
@@ -19,4 +18,3 @@ set shiftround
 set shiftwidth=2
 set smartcase
 set tabstop=2
-set termguicolors
