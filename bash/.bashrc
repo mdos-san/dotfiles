@@ -58,8 +58,14 @@ alias grr="git rebase -i --root --autosquash"
 alias gro="git rebase origin/master -i --autosquash"
 alias gs="git status"
 
+alias todo="vim ~/todo"
+
 function gcf {
   git commit --fixup=$1
+}
+
+function gcs {
+  git commit --squash=$1
 }
 
 function git-changelog {
