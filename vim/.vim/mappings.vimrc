@@ -11,8 +11,8 @@ nnoremap <leader>rl :source ~/.vimrc<cr>
 " Better command mode
 nnoremap ; :
 
-" Fast exit
-nnoremap <leader>q :wqa<cr>
+" Fast quit window
+nnoremap <leader>q :q<cr>
 
 " Toggle current fold
 nnoremap n nzz

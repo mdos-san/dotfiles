@@ -1,1 +1,0 @@
--- Setup of lspconfig is done in nvim-cmp to give completion capabilities

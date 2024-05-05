@@ -81,3 +81,14 @@ function git-save {
   git commit --amend --no-edit
 }
 
+function git-mutated-files {
+  git ls-tree -r main --name-only | xargs -n 1 bash -c 'echo $0 $(git log --oneline $0 | wc -l) | grep 2'
+}
+
+function git-recommit {
+  git diff --name-only --diff-filter=M | xargs -l bash -c 'git log -n 1 --pretty=format:"%h" $0 && echo "" && echo $0' | xargs -l -n 2 bash -c 'git add $1 && git commit --fixup=$0'
+}
+
+function git-recommit-deleted {
+  git diff --name-only --diff-filter=D | xargs -l bash -c 'git log -n 1 --pretty=format:"%h" -- $0 && echo "" && echo $0' | xargs -l -n 2 bash -c 'git add -- $1 && git commit --fixup=$0'
+}
