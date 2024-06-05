@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Source
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f ~/custom.bash ] && source ~/custom.bash
-
 export HISTCONTROL=ignorespace
 
 # Prompt
 PS1='[\u@\h \W]\$ '
+
+# Source
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/custom.bash ] && source ~/custom.bash
 
 # Clean bash history
 alias history_clean="history -c && history -w"
@@ -58,8 +58,6 @@ alias grr="git rebase -i --root --autosquash"
 alias gro="git rebase origin/master -i --autosquash"
 alias gs="git status"
 
-alias todo="vim ~/todo"
-
 function gcf {
   git commit --fixup=$1
 }
@@ -92,3 +90,9 @@ function git-recommit {
 function git-recommit-deleted {
   git diff --name-only --diff-filter=D | xargs -l bash -c 'git log -n 1 --pretty=format:"%h" -- $0 && echo "" && echo $0' | xargs -l -n 2 bash -c 'git add -- $1 && git commit --fixup=$0'
 }
+
+alias todo="vim ~/todo"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

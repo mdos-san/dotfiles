@@ -1,4 +1,6 @@
+colorscheme dracula
 set autoread
+set background=dark
 set colorcolumn=80
 set completeopt=menu,menuone,noselect
 set cursorcolumn

@@ -55,7 +55,7 @@ nmap <silent> <leader>i <Plug>(coc-implementation)
 nmap <silent> <leader>r <Plug>(coc-references)
 
 " Use K to show documentation in preview window
-nnoremap <silent> K :call ShowDocumentation()<CR>
+nnoremap <silent> <leader>k :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
@@ -69,11 +69,11 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>N <Plug>(coc-rename)
 
 " Formatting selected code
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>F  <Plug>(coc-format-selected)
+nmap <leader>F  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -83,18 +83,17 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Remap keys for applying code actions at the cursor position
-nmap <leader>a  <Plug>(coc-codeaction-cursor)
-" Remap keys for apply code actions affect whole buffer
-" nmap <leader>as  <Plug>(coc-codeaction-source)
+" Applying code actions to the selected code block
+" Example: `<leader>aap` for current paragraph
+nmap <leader>a  <Plug>(coc-codeaction)
 " Apply the most preferred quickfix action to fix diagnostic on the current line
-" nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Remap keys for applying refactor code actions
-nmap <silent> <leader>cr <Plug>(coc-codeaction-refactor)
+nmap <silent> <leader>R <Plug>(coc-codeaction-refactor)
 
 " Run the Code Lens action on the current line
-nnoremap <leader>cl  <Plug>(coc-codelens-action)
+nmap <leader>l  <Plug>(coc-codelens-action)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server
@@ -138,18 +137,18 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics
-nnoremap <silent><nowait> <leader>cd  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <leader>D  :<C-u>CocList diagnostics<cr>
 " Manage extensions
-nnoremap <silent><nowait> <leader>ce  :<C-u>CocList extensions<cr>
+nnoremap <silent><nowait> <leader>e  :<C-u>CocList extensions<cr>
 " Show commands
-nnoremap <silent><nowait> <leader>cc :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <leader>c  :<C-u>CocList commands<cr>
 " Find symbol of current document
-nnoremap <silent><nowait> <leader>co  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
 " Search workspace symbols
-nnoremap <silent><nowait> <leader>cs  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <leader>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item
-nnoremap <silent><nowait> <leader>cj  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <leader><leader>n  :<C-u>CocNext<CR>
 " Do default action for previous item
-nnoremap <silent><nowait> <leader>ck  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <leader><leader>p  :<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent><nowait> <leader>cp  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <leader><leader>l  :<C-u>CocListResume<CR>
