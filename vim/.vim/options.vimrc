@@ -1,4 +1,4 @@
-colorscheme dracula
+colorscheme catppuccin_mocha
 set autoread
 set background=dark
 set colorcolumn=80

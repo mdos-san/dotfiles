@@ -5,7 +5,6 @@ source ~/.vim/variables.vimrc
 source ~/.vim/options.vimrc
 source ~/.vim/mappings.vimrc
 source ~/.vim/functions.vimrc
-source ~/.vim/coc.vimrc
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >

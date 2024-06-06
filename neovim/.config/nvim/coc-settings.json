@@ -1,5 +1,0 @@
-{
-  "java.jdt.ls.directory": "/home/mdos-san/jdtls",
-  "java.jdt.ls.vmargs": "-XX:+UseG1GC -XX:+UseStringDeduplication -Xmx4G -Xms4G -Djava.import.generatesMetadataFilesAtProjectRoot=false",
-}
-
