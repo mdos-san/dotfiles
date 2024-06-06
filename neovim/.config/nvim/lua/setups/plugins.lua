@@ -1,3 +1,4 @@
+-- TODO: Use lazy.nvim https://github.com/folke/lazy.nvim
 return require('packer').startup(function(use)
     -- Package manager
     use 'wbthomason/packer.nvim'
@@ -10,6 +11,9 @@ return require('packer').startup(function(use)
 
     -- LSP Java
     use 'mfussenegger/nvim-jdtls'
+
+    -- Better vim.ui
+    use {'stevearc/dressing.nvim'}
 
     -- Theme
     use 'catppuccin/vim'
