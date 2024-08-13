@@ -3,7 +3,7 @@
 export HISTCONTROL=ignorespace
 
 # Prompt
-PS1='[\u@\h \W]\$ '
+PS1='[\w]\$> '
 
 # Source
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
