@@ -20,8 +20,12 @@ return {
   	"williamboman/mason.nvim",
   	opts = {
   		ensure_installed = {
-  			"lua-language-server", "stylua",
-  			"html-lsp", "css-lsp" , "prettier"
+  			"lua-language-server",
+        "stylua",
+  			"html-lsp",
+  			"typescript-language-server",
+        "css-lsp" ,
+        "prettier"
   		},
   	},
   },
@@ -29,10 +33,7 @@ return {
   {
   	"nvim-treesitter/nvim-treesitter",
   	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css"
-  		},
+  		ensure_installed = { },
   	},
   },
 }
