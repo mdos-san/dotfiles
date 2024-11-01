@@ -1,12 +1,10 @@
 #!/bin/bash
 
 # Source
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+[ -f ~/.bashrc ] && source ~/.bashrc
+[ -f ~/.path ] && source ~/.path
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f ~/custom.bash ] && source ~/custom.bash
-
-# Prompt
-PS1='\w \$ '
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # Aliases
 alias brc="nvim ~/.bashrc"
@@ -19,12 +17,12 @@ alias rl="source ~/.bashrc"
 alias todo="nvim ~/todo"
 alias vim="nvim"
 alias vrc="nvim ~/.vimrc"
+
 # Git
 alias ga="git add ."
-alias gaca="git add . && git commit --amend"
 alias gc="git commit --allow-empty"
 alias gca="git commit --amend --allow-empty"
-alias gd="git diff origin/master.."
+alias gd="git diff"
 alias gfa="git fetch --all"
 alias gl="git log --oneline"
 alias glr="git log --oneline --reverse"
@@ -62,6 +60,8 @@ function git-recommit-deleted {
 }
 
 export HISTCONTROL=ignorespace
+
+export PATH=$PATH:/home/stitch/nvim-linux64/bin
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
