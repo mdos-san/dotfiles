@@ -7,16 +7,14 @@
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # Aliases
-alias brc="nvim ~/.bashrc"
+alias brc="lvim ~/.bashrc"
 alias history_clean="history -c && history -w"
 alias k="kubectl"
 alias ls='ls --color=auto'
-alias nvimrc="vim ~/.config/nvim/init.lua"
 alias peek="peek -b ffmpeg"
 alias rl="source ~/.bashrc"
-alias todo="nvim ~/todo"
-alias vim="nvim"
-alias vrc="nvim ~/.vimrc"
+alias todo="lvim ~/todo"
+alias vrc="lvim ~/.vimrc"
 
 # Git
 alias ga="git add ."
@@ -60,8 +58,6 @@ function git-recommit-deleted {
 }
 
 export HISTCONTROL=ignorespace
-
-export PATH=$PATH:/home/stitch/nvim-linux64/bin
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
