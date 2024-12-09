@@ -4,7 +4,9 @@
 [ -f ~/.bashrc ] && source ~/.bashrc
 [ -f ~/.path ] && source ~/.path
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+# Path
+export PATH=$PATH:/home/$USER/.local/bin
 
 # Aliases
 alias brc="lvim ~/.bashrc"
@@ -12,7 +14,6 @@ alias history_clean="history -c && history -w"
 alias k="kubectl"
 alias ls='ls --color=auto'
 alias peek="peek -b ffmpeg"
-alias rl="source ~/.bashrc"
 alias todo="lvim ~/todo"
 alias vrc="lvim ~/.vimrc"
 
@@ -52,8 +53,8 @@ function git-recommit {
 }
 
 function git-recommit-deleted {
-  git diff --name-only --diff-filter=D | \
-    xargs -l bash -c 'git log -n 1 --pretty=format:"%h" -- $0 && echo "" && echo $0' | \
+  git diff --name-only --diff-filter=D |
+    xargs -l bash -c 'git log -n 1 --pretty=format:"%h" -- $0 && echo "" && echo $0' |
     xargs -l -n 2 bash -c 'git add -- $1 && git commit --fixup=$0'
 }
 
