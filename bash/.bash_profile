@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o vi
+
 # Source
 [ -f ~/.bashrc ] && source ~/.bashrc
 [ -f ~/.path ] && source ~/.path
