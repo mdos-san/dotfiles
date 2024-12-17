@@ -3,14 +3,15 @@
 set -o vi
 
 # Source
-[ -f ~/.bashrc ] && source ~/.bashrc
-[ -f ~/.path ] && source ~/.path
+[ -f ~/path.bash ] && source ~/path.bash
+[ -f ~/custom.bash ] && source ~/custom.bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Path
 export PATH=$PATH:/home/$USER/.local/bin
 
 # Aliases
+alias rl="source ~/.bashrc"
 alias brc="lvim ~/.bashrc"
 alias history_clean="history -c && history -w"
 alias k="kubectl"
