@@ -9,6 +9,12 @@ set -o vi
 
 # Path
 export PATH=$PATH:/home/$USER/.local/bin
+export HISTCONTROL=ignorespace
+
+# include .bashrc if it exists
+if [ -f "$HOME/.bashrc" ]; then
+  . "$HOME/.bashrc"
+fi
 
 # Aliases
 alias rl="source ~/.bashrc"
@@ -60,9 +66,3 @@ function git-recommit-deleted {
     xargs -l bash -c 'git log -n 1 --pretty=format:"%h" -- $0 && echo "" && echo $0' |
     xargs -l -n 2 bash -c 'git add -- $1 && git commit --fixup=$0'
 }
-
-export HISTCONTROL=ignorespace
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
