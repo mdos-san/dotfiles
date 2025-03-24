@@ -17,14 +17,13 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 # Aliases
-alias rl="source ~/.bashrc"
-alias brc="lvim ~/.bashrc"
+alias rl="source ~/.bash_profile"
+alias brc="nvim ~/.bash_profile"
 alias history_clean="history -c && history -w"
 alias k="kubectl"
 alias ls='ls --color=auto'
 alias peek="peek -b ffmpeg"
-alias todo="lvim ~/todo"
-alias vrc="lvim ~/.vimrc"
+alias vrc="nvim ~/.config/nvim/init.lua"
 
 # Git
 alias ga="git add ."
