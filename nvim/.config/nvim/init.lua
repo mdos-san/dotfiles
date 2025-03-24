@@ -22,6 +22,9 @@ require('mini.fuzzy').setup()
 require('mini.snippets').setup()
 require('mini.pairs').setup()
 require('mini.bracketed').setup()
+require('mini.notify').setup()
+require('mini.pick').setup()
+require('mini.extra').setup()
 
 local add = MiniDeps.add
 
@@ -56,6 +59,13 @@ vim.keymap.set('n', '<leader>a', ':lua vim.lsp.buf.code_action()<enter>')
 vim.keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<enter>')
 vim.keymap.set('n', '<leader>r', ':lua vim.lsp.buf.rename()<enter>')
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<enter>')
+
+vim.keymap.set('v', "<leader>'", "<esc>`>a'<esc>`<i'<esc>")
+vim.keymap.set('v', '<leader>"', '<esc>`>a"<esc>`<i"<esc>')
+vim.keymap.set('v', '<leader>`', '<esc>`>a`<esc>`<i`<esc>')
+vim.keymap.set('v', '<leader>[', '<esc>`>a]<esc>`<i[<esc>')
+vim.keymap.set('v', '<leader>(', '<esc>`>a)<esc>`<i(<esc>')
+vim.keymap.set('v', '<leader>{', '<esc>`>a}<esc>`<i{<esc>')
 
 -- Options
 vim.o.mouse = ""
