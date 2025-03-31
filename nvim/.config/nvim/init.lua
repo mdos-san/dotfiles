@@ -24,7 +24,6 @@ require('mini.pairs').setup()
 require('mini.bracketed').setup()
 require('mini.notify').setup()
 require('mini.pick').setup()
-require('mini.extra').setup()
 
 local add = MiniDeps.add
 
@@ -44,6 +43,9 @@ require("mason").setup()
 add({ source = 'nvim-tree/nvim-web-devicons' })
 require("nvim-web-devicons").setup()
 
+add({ source = 'folke/trouble.nvim' })
+require("trouble").setup()
+
 -- Nvim Tree
 add({ source = 'nvim-tree/nvim-tree.lua' })
 vim.g.loaded_netrw = 1
@@ -59,6 +61,7 @@ vim.keymap.set('n', '<leader>a', ':lua vim.lsp.buf.code_action()<enter>')
 vim.keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<enter>')
 vim.keymap.set('n', '<leader>r', ':lua vim.lsp.buf.rename()<enter>')
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<enter>')
+vim.keymap.set('n', '<leader>t', ':Trouble diagnostics toggle focus=false filter.buf=0<enter>')
 
 vim.keymap.set('v', "<leader>'", "<esc>`>a'<esc>`<i'<esc>")
 vim.keymap.set('v', '<leader>"', '<esc>`>a"<esc>`<i"<esc>')
