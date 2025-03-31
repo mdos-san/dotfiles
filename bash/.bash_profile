@@ -9,6 +9,7 @@ set -o vi
 
 # Path
 export PATH=$PATH:/home/$USER/.local/bin
+export PATH=$PATH:/home/$USER/AppImages
 export HISTCONTROL=ignorespace
 
 # include .bashrc if it exists
@@ -17,6 +18,7 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 # Aliases
+alias nvim="~/AppImages/neovim.appimage"
 alias rl="source ~/.bash_profile"
 alias brc="nvim ~/.bash_profile"
 alias history_clean="history -c && history -w"
