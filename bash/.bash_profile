@@ -26,7 +26,7 @@ alias history_clean="history -c && history -w"
 alias k="kubectl"
 alias ls='ls --color=auto'
 alias peek="peek -b ffmpeg"
-alias vrc="nvim ~/.config/nvim/init.lua"
+alias vrc="vim ~/.vimrc"
 
 # Git
 alias ga="git add ."
