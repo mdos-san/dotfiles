@@ -21,7 +21,7 @@ fi
 # Aliases
 alias nvim="~/AppImages/neovim.appimage"
 alias rl="source ~/.bash_profile"
-alias brc="nvim ~/.bash_profile"
+alias brc="vim ~/.bash_profile"
 alias history_clean="history -c && history -w"
 alias k="kubectl"
 alias ls='ls --color=auto'
