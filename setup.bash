@@ -1,3 +1,3 @@
 #!/bin/bash
 
-stow -d . -t ~ bash tmux nvim
+stow -d . -t ~ bash tmux nvim vim
