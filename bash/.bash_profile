@@ -43,6 +43,10 @@ alias gro="git rebase origin/master -i --autosquash"
 alias grr="git rebase -i --root --autosquash"
 alias gs="git status"
 
+function add-path {
+  echo "export PATH=\$PATH:$1" >> ~/.path.bash
+}
+
 function gcf {
   git commit --fixup=$1
 }
