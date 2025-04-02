@@ -3,8 +3,8 @@
 set -o vi
 
 # Source
-[ -f ~/path.bash ] && source ~/path.bash
-[ -f ~/custom.bash ] && source ~/custom.bash
+[ -f ~/.path.bash ] && source ~/.path.bash
+[ -f ~/.custom.bash ] && source ~/.custom.bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Path
