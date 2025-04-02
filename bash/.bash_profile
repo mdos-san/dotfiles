@@ -9,6 +9,7 @@ set -o vi
 
 # Path
 export PATH=$PATH:/home/$USER/.local/bin
+export PATH=$PATH:/home/$USER/.npm-global/bin
 export PATH=$PATH:/home/$USER/AppImages
 export HISTCONTROL=ignorespace
 
