@@ -19,7 +19,6 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 # Aliases
-alias nvim="~/AppImages/neovim.appimage"
 alias rl="source ~/.bash_profile"
 alias brc="vim ~/.bash_profile"
 alias history_clean="history -c && history -w"
