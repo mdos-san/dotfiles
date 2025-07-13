@@ -15,9 +15,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
+-- Leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
@@ -25,16 +23,21 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = {
 	{
-	"L3MON4D3/LuaSnip",
-	-- follow latest release.
-	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-	-- install jsregexp (optional!).
-	build = "make install_jsregexp"
-	}
+		"L3MON4D3/LuaSnip",
+		version = "v2.*",
+		build = "make install_jsregexp",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load()
+			require'luasnip'.filetype_extend("typescript", {"javascript"})
+		end,
+		keys = {
+			{ "<C-L>", function() require("luasnip").expand() end, mode = "i" },
+			{ "<C-J>", function() require("luasnip").jump() end, mode = "i" },
+		},
+	},
   },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
-  -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
