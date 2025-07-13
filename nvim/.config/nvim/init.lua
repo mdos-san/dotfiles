@@ -24,7 +24,14 @@ require("lazy").setup({
   spec = {
 	{
 		"mason-org/mason.nvim",
-		opts = {}
+		opts = {},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		opts = {},
+		config = function()
+			vim.lsp.enable('ts_ls')
+		end,
 	},
 	{
 		"L3MON4D3/LuaSnip",
