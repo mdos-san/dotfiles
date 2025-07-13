@@ -27,6 +27,20 @@ require("lazy").setup({
 		{ "saghen/blink.cmp", opts = {}, version = "1.4.1" },
 		{ "folke/trouble.nvim", opts = {} },
 		{
+			"nvim-treesitter/nvim-treesitter",
+			branch = "master",
+			lazy = false,
+			build = ":TSUpdate",
+			config = function()
+				require("nvim-treesitter.configs").setup({
+					ensure_installed = { "lua", "typescript", "css", "html" },
+					highlight = {
+						enable = true,
+					},
+				})
+			end,
+		},
+		{
 			"folke/tokyonight.nvim",
 			lazy = false,
 			priority = 1000,
@@ -119,4 +133,3 @@ end)
 vim.diagnostic.config({ underline = true, virtual_text = true, signs = false, severity_sort = true })
 
 vim.cmd([[colorscheme tokyonight-night]])
-
