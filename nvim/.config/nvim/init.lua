@@ -22,30 +22,33 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-	{ "mason-org/mason.nvim" },
-	{ "nvim-tree/nvim-web-devicons" },
+	{ "mason-org/mason.nvim", opts = {} },
+	{ "nvim-tree/nvim-web-devicons", opts = {} },
+	{ "saghen/blink.cmp", opts = {} },
 	{
 		"neovim/nvim-lspconfig",
+		opts = {},
 		config = function()
 			vim.lsp.enable('ts_ls')
 		end,
 	},
 	{
 		"L3MON4D3/LuaSnip",
+		opts = {},
 		version = "v2.*",
 		build = "make install_jsregexp",
 		dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()
-			require("luasnip.loaders.from_vscode").lazy_load()
 			require'luasnip'.filetype_extend("typescript", {"javascript"})
+			require("luasnip.loaders.from_vscode").lazy_load()
 		end,
 		keys = {
-			{ "<C-L>", function() require("luasnip").expand() end, mode = "i" },
-			{ "<C-J>", function() require("luasnip").jump() end, mode = "i" },
+			{ "<C-L>", function() require("luasnip").expand_or_jump() end, mode = "i" },
 		},
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
+		opts = {},
 		config = function()
 			require("nvim-tree").setup()
 			vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<cr>')
