@@ -59,3 +59,6 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
+-- Mapping
+vim.keymap.set('i', '<esc>', '')
+vim.keymap.set('i', 'jfj', '<esc>')
