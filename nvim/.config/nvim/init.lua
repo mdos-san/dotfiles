@@ -22,13 +22,10 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-	{
-		"mason-org/mason.nvim",
-		opts = {},
-	},
+	{ "mason-org/mason.nvim" },
+	{ "nvim-tree/nvim-web-devicons" },
 	{
 		"neovim/nvim-lspconfig",
-		opts = {},
 		config = function()
 			vim.lsp.enable('ts_ls')
 		end,
@@ -46,6 +43,13 @@ require("lazy").setup({
 			{ "<C-L>", function() require("luasnip").expand() end, mode = "i" },
 			{ "<C-J>", function() require("luasnip").jump() end, mode = "i" },
 		},
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		config = function()
+			require("nvim-tree").setup()
+			vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<cr>')
+		end,
 	},
   },
   install = { colorscheme = { "habamax" } },

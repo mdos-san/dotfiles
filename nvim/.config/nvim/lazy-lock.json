@@ -3,5 +3,7 @@
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "mason.nvim": { "branch": "main", "commit": "8024d64e1330b86044fed4c8494ef3dcd483a67c" },
-  "nvim-lspconfig": { "branch": "master", "commit": "dbdb80d3bd311989d21029c63918d67a786d5013" }
+  "nvim-lspconfig": { "branch": "master", "commit": "dbdb80d3bd311989d21029c63918d67a786d5013" },
+  "nvim-tree.lua": { "branch": "master", "commit": "b0b49552c9462900a882fe772993b01d780445fe" },
+  "nvim-web-devicons": { "branch": "master", "commit": "a1366758b3a232036dc97be8ca41184aa3f50506" }
 }
