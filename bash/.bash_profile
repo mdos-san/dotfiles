@@ -43,7 +43,7 @@ alias grr="git rebase -i --root --autosquash"
 alias gs="git status"
 
 function add-path {
-  echo "export PATH=\$PATH:$1" >> ~/.path.bash
+  echo "export PATH=\$PATH:$PWD" >> ~/.path.bash
 }
 
 function gcf {
