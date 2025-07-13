@@ -24,7 +24,7 @@ require("lazy").setup({
   spec = {
 	{ "mason-org/mason.nvim", opts = {} },
 	{ "nvim-tree/nvim-web-devicons", opts = {} },
-	{ "saghen/blink.cmp", opts = {} },
+	{ "saghen/blink.cmp", opts = {}, version = "1.4.1" },
 	{
 		"neovim/nvim-lspconfig",
 		opts = {},
