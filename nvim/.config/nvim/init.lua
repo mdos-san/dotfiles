@@ -25,6 +25,18 @@ require("lazy").setup({
 	{ "mason-org/mason.nvim", opts = {} },
 	{ "nvim-tree/nvim-web-devicons", opts = {} },
 	{ "saghen/blink.cmp", opts = {}, version = "1.4.1" },
+	{ 'stevearc/conform.nvim', opts = {},
+		config = function()
+			require("conform").setup({
+			    formatters_by_ft = {
+				typescript = {"prettier"},
+				javascript = {"prettier"},
+				css = {"prettier"},
+				html = {"prettier"},
+			    }
+			})
+		end,
+},
 	{
 		"neovim/nvim-lspconfig",
 		opts = {},
@@ -59,6 +71,11 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
+
 -- Mapping
 vim.keymap.set('i', '<esc>', '')
-vim.keymap.set('i', 'jfj', '<esc>')
+vim.keymap.set('i', '<A-i>', '<esc>')
+vim.keymap.set('n', ';', ':')
+vim.keymap.set('n', '<leader>l', ':Lazy<cr>')
+vim.keymap.set('n', '<leader>m', ':Mason<cr>')
+vim.keymap.set('n', '<leader>f', function() require'conform'.format() end)
