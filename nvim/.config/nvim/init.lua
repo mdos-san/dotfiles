@@ -25,6 +25,7 @@ require("lazy").setup({
 		{ "mason-org/mason.nvim", opts = {} },
 		{ "nvim-tree/nvim-web-devicons", opts = {} },
 		{ "saghen/blink.cmp", opts = {}, version = "1.4.1" },
+		{ "folke/trouble.nvim", opts = {} },
 		{
 			"folke/snacks.nvim",
 			opts = {
@@ -109,3 +110,5 @@ vim.keymap.set("n", "<leader>m", ":Mason<cr>")
 vim.keymap.set("n", "<leader>f", function()
 	require("conform").format()
 end)
+
+vim.diagnostic.config({ underline = true, virtual_text = true, signs = false, severity_sort = true })
