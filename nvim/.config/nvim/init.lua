@@ -27,6 +27,12 @@ require("lazy").setup({
 		{ "saghen/blink.cmp", opts = {}, version = "1.4.1" },
 		{ "folke/trouble.nvim", opts = {} },
 		{
+			"folke/tokyonight.nvim",
+			lazy = false,
+			priority = 1000,
+			opts = {},
+		},
+		{
 			"folke/snacks.nvim",
 			opts = {
 				-- your configuration comes here
@@ -97,7 +103,6 @@ require("lazy").setup({
 			end,
 		},
 	},
-	install = { colorscheme = { "habamax" } },
 	checker = { enabled = true },
 })
 
@@ -112,3 +117,6 @@ vim.keymap.set("n", "<leader>f", function()
 end)
 
 vim.diagnostic.config({ underline = true, virtual_text = true, signs = false, severity_sort = true })
+
+vim.cmd([[colorscheme tokyonight-night]])
+
