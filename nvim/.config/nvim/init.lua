@@ -123,9 +123,10 @@ vim.keymap.set("i", "<A-i>", "<esc>")
 vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", "<leader>l", ":Lazy<cr>")
 vim.keymap.set("n", "<leader>m", ":Mason<cr>")
-vim.keymap.set("n", "<leader>f", function()
-  require("conform").format()
-end)
+vim.keymap.set("n", "<leader>f", function() require("conform").format() end)
+vim.keymap.set("n", "gd", function() vim.lsp.buf.implementation() end)
+vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end)
+vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end)
 
 vim.diagnostic.config({ underline = true, virtual_text = true, signs = false, severity_sort = true })
 
