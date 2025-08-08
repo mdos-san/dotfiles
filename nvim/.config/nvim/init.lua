@@ -83,6 +83,7 @@ require("lazy").setup({
       opts = {},
       config = function()
         vim.lsp.enable("ts_ls")
+        vim.lsp.enable("cssls")
       end,
     },
     {
