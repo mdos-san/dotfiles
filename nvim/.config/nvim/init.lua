@@ -22,6 +22,7 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = { 'nvim-lua/plenary.nvim' } },
     { "mason-org/mason.nvim", opts = {} },
     { "nvim-tree/nvim-web-devicons", opts = {} },
     { "saghen/blink.cmp", opts = {}, version = "1.4.1" },
@@ -118,13 +119,18 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ hidden=true }) end, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('v', '<leader>f', 'y:Telescope grep_string search=<C-R>"<CR>', { desc = 'Telescope live grep selected' })
+
 -- Mapping
 vim.keymap.set("i", "<esc>", "")
 vim.keymap.set("i", "<A-i>", "<esc>")
 vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", "<leader>l", ":Lazy<cr>")
 vim.keymap.set("n", "<leader>m", ":Mason<cr>")
-vim.keymap.set("n", "<leader>f", function() require("conform").format() end)
+vim.keymap.set("n", "<leader><leader>", function() require("conform").format() end)
 vim.keymap.set("n", "gd", function() vim.lsp.buf.implementation() end)
 vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end)
 vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end)
