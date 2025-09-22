@@ -1,3 +1,2 @@
-neovim/.config/nvim/plugin/
-neovim/.config/configstore/
-neovim/.config/coc/
+nvim/.config/*
+!nvim/.config/nvim
