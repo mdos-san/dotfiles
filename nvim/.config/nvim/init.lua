@@ -127,6 +127,7 @@ vim.keymap.set('v', '<leader>f', 'y:Telescope grep_string search=<C-R>"<CR>', { 
 -- Mapping
 vim.keymap.set("i", "<esc>", "")
 vim.keymap.set("i", "<A-i>", "<esc>")
+vim.keymap.set("i", "<D-i>", "<esc>")
 vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", "<leader>l", ":Lazy<cr>")
 vim.keymap.set("n", "<leader>m", ":Mason<cr>")
